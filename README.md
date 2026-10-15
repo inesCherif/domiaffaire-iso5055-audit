@@ -142,7 +142,7 @@ out of scope.
 | 1 | Run the application locally | [`reports/01-run-app.md`](reports/01-run-app.md) |
 | 2 | Review A: knowledge only | `reports/02-review-knowledge.*` |
 | 3 | Review B: knowledge + ISO 5055 text | `reports/03-review-iso.*` |
-| 4 | CAST preparation | `cast/` |
+| 4 | CAST preparation (setup, guide, video script) | `cast/` |
 | 5 | CAST results vs Claude | `reports/05-cast-vs-claude.*` |
 | 6 | SonarQube + final comparison | `sonar/`, `reports/06-final-comparison.*` |
 
