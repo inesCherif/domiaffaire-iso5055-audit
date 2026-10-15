@@ -1,0 +1,32 @@
+# ISO/IEC 5055 standard: copyrighted by ISO, local reading only
+*.pdf
+!reports/*.pdf
+
+# Local secrets / run config (Spring Boot auto-loads ./config/application.properties)
+**/config/application.properties
+**/config/application-*.properties
+.env
+*.env
+
+# Build and dependency output
+node_modules/
+target/
+dist/
+.angular/
+*.class
+
+# CAST analyzer outputs and the clean export sent to CAST
+*.casticr
+cast/domiaffaire-cast/
+
+# IDE / OS
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Local tools (portable MongoDB, etc.)
+tools/
+
+# Local working notes for the assistant (not published)
+CLAUDE.md
