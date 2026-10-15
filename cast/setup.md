@@ -63,13 +63,34 @@ and we want to see whether CAST detects them.
 | Profiling first | yes, then **stop and check** | Profiling is free and changes nothing. We check size and technologies before the one-shot deep analysis |
 | Expected technologies | Java, Spring Boot/MVC/Data/Security, MongoDB, TypeScript/Angular, HTML/CSS | All listed as covered in CAST's docs (Angular 2–17, TypeScript extension 1.13) |
 
-## 4. Machine preparation
+## 4. Profiling result (2026-10-15, 19:07): check passed
+
+| Measure | CAST profiling | Our own count |
+|---|---|---|
+| Lines of code | **27,998** (444 files, 1,023 KB) | about 28.5k non-blank lines |
+| HTML | 10,361 (72 files) | 10,356 (72) |
+| TypeScript | 8,930 (154) | 8,922 (154) |
+| Java | 5,883 (146) | 5,876 (146) |
+| CSS | 2,814 (71) | 2,835 (72) |
+| JavaScript | 10 (1, `tailwind.config.js`) | — |
+
+- All 5 languages are marked **supported** for deep analysis.
+- **Frameworks detected:** Spring MVC, Angular, MongoDB (Java), Lombok.
+- **Excluded before profiling:** 0 files. Not analysed (configuration, no code): `.json`, `.properties`, `.md`, `.gitignore`, `.editorconfig`, `.ico`.
+- **Architecture preview:** Web (Angular + JS/TS REST) → REST → JEE (Spring) → MongoDB.
+- **CAST's one finding:** "5 files duplicate (2%)". We checked: these are identical files in Wassim's code, mostly empty
+  Angular component `.css` files, plus an identical `favorite-blogs.module.ts` under `accountant/` and `client/`.
+  **We left them in:** they are real copy-paste in the project (see finding M02), and removing them would hide it.
+
+**Decision:** profiling matches our own count within 2 %, and every technology in scope is detected, so we launched the deep analysis.
+
+## 5. Machine preparation
 
 - Windows 11, 15.4 GB RAM, Ryzen 5 5500H. CAST asks for 8 GB minimum.
 - Before the deep analysis we close heavy apps (DomiAffaire's servers, `domi-mongo`, Docker Desktop, Discord, extra
   Chrome tabs), because the PC had only about 0.5 GB of free RAM during step 1.
 
-## 5. What comes next
+## 6. What comes next
 
 1. Profiling, then a screenshot check (guide, Part C).
 2. Deep analysis and upload (guide, Part D).
