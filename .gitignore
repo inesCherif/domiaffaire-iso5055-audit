@@ -30,3 +30,14 @@ tools/
 
 # Local working notes for the assistant (not published)
 CLAUDE.md
+.scannerwork/
+# JVM crash dumps
+hs_err_pid*.log
+replay_pid*.log
+sonar/demo/v2/rec/frames-*/
+sonar/demo/v2/rec/state.json
+sonar/demo/v2/out/
+
+# Full joined tutorial (>100 MB, GitHub limit); chapters are committed
+presentation/sonarqube/v3/sonarqube-beginner-tutorial.mp4
+sonar/demo/v3/__pycache__/
